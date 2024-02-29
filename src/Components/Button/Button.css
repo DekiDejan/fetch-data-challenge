@@ -1,0 +1,23 @@
+.buttons {
+  width: 100%;
+  display: flex;
+}
+
+.buttons button {
+  flex: 1;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 1px;
+  background-color: hsl(0, 0%, 95%);
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: hsl(0, 0%, 90%);
+}
+
+.clickedButton {
+  background-color: black !important;
+  color: white;
+}
