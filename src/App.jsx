@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Button from "./Components/Button/Button.jsx";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -17,26 +18,12 @@ function App() {
         });
   }, [clicked]);
 
-  const handleClick = (e) => {
-    setClicked(e.target.innerText);
-    document.querySelectorAll("button").forEach((button) => {
-      button.classList.remove("clicked");
-    });
-    e.target.classList.add("clicked");
-  };
-
   return (
     <>
       <div className="buttons">
-        <button className="users" onClick={handleClick}>
-          users
-        </button>
-        <button className="posts" onClick={handleClick}>
-          posts
-        </button>
-        <button className="comments" onClick={handleClick}>
-          comments
-        </button>
+        <Button value="users" setClicked={setClicked} />
+        <Button value="posts" setClicked={setClicked} />
+        <Button value="comments" setClicked={setClicked} />
       </div>
       <div className="items">
         <ul>
