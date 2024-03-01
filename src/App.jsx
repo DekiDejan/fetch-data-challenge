@@ -30,11 +30,26 @@ function App() {
         <Button value="comments" setType={setType} />
       </div>
       <div className="items">
-        <ul>
+        <table>
+          <tbody>
+            {items.map((item) => {
+              return (
+                <tr key={item.id}>
+                  {Object.entries(item).map(([key, value]) => {
+                    return <td key={key}>{JSON.stringify(value)}</td>;
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        {/* First variation of the challenge, using unordered list to render data */}
+        {/* <ul>
           {items.map((item) => (
             <li key={item.id}>{JSON.stringify(item)}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </>
   );

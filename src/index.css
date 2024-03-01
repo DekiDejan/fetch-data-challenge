@@ -9,3 +9,7 @@ body {
 .items ul li {
   padding-bottom: 1rem;
 }
+
+td {
+  border: 1px solid black;
+}
