@@ -3,27 +3,31 @@ import Button from "./Components/Button/Button.jsx";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [clicked, setClicked] = useState("");
-  const url = `https://jsonplaceholder.typicode.com/${clicked}`;
+  const [type, setType] = useState("");
+  const url = `https://jsonplaceholder.typicode.com/${type}`;
 
   useEffect(() => {
-    clicked !== "" &&
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
+    const fetchItems = async () => {
+      if (type !== "") {
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
           setItems(data);
-        })
-        .catch((error) => {
+        } catch (error) {
           console.error("Error fetching data:", error);
-        });
-  }, [clicked]);
+        }
+      }
+    };
+
+    fetchItems();
+  }, [type]);
 
   return (
     <>
       <div className="buttons">
-        <Button value="users" setClicked={setClicked} />
-        <Button value="posts" setClicked={setClicked} />
-        <Button value="comments" setClicked={setClicked} />
+        <Button value="users" setType={setType} />
+        <Button value="posts" setType={setType} />
+        <Button value="comments" setType={setType} />
       </div>
       <div className="items">
         <ul>

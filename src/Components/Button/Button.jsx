@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import "./Button.css";
 
-const Button = ({ value, setClicked }) => {
+const Button = ({ value, setType }) => {
   const handleClick = (e) => {
-    setClicked(e.target.innerText);
+    setType(e.target.innerText);
     document.querySelectorAll("button").forEach((button) => {
       button.classList.remove("clickedButton");
     });
