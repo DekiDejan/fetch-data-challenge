@@ -35,7 +35,7 @@ function App() {
         <Table items={items} />
 
         {/* First variation of the challenge, using unordered list to render data */}
-        {/* <List items={items} type={type} /> */}
+        {/* <List items={items} /> */}
       </div>
     </>
   );

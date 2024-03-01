@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./List.css";
 
-const List = ({ items, type }) => {
+const List = ({ items }) => {
   return (
     <ul>
       {items.map((item) => (

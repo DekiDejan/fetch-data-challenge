@@ -5,3 +5,7 @@ body {
   box-sizing: border-box;
   background-color: hsla(0, 0%, 90%);
 }
+
+.items {
+  padding-top: 39px;
+}
