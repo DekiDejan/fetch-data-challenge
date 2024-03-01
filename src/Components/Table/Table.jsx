@@ -5,6 +5,12 @@ const Table = ({ items }) => {
   return (
     <table>
       <tbody>
+        {/* <tr>
+          {items &&
+            Object.keys(items[0]).map((key) => {
+              return <th key={key}>{key.toUpperCase()}</th>;
+            })}
+        </tr> */}
         {items.map((item) => {
           return (
             <tr key={item.id}>
