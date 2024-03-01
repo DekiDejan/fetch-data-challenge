@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "./Components/Button/Button.jsx";
+import Table from "./Components/Table/Table.jsx";
+import List from "./Components/List/List.jsx";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -30,26 +32,10 @@ function App() {
         <Button value="comments" setType={setType} />
       </div>
       <div className="items">
-        <table>
-          <tbody>
-            {items.map((item) => {
-              return (
-                <tr key={item.id}>
-                  {Object.entries(item).map(([key, value]) => {
-                    return <td key={key}>{JSON.stringify(value)}</td>;
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <Table items={items} />
 
         {/* First variation of the challenge, using unordered list to render data */}
-        {/* <ul>
-          {items.map((item) => (
-            <li key={item.id}>{JSON.stringify(item)}</li>
-          ))}
-        </ul> */}
+        {/* <List items={items} type={type} /> */}
       </div>
     </>
   );
